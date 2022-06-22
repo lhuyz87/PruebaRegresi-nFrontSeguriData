@@ -6,10 +6,11 @@ def defTimestamp = defDateFormat.format(defDate).toString()
 pipeline {
     //agent {label 'Slave_QA2'}
 
-	agent any
+	agent {label 'Slave_QA2'}
+
     tools {
-            maven 'M3'
-            jdk 'jdk8.221'
+            maven 'MAVEN'
+            jdk 'Java 8-251'
         }
     
     stages {
