@@ -67,10 +67,10 @@ pipeline {
                     filePath:'target/cucumber/*.json',
                     format: 'Cucumber',
                     autoCreateTestCases: false,
-                    customTestCycle: [
-				name: 'Pruebas de regresion',
-                description: 'Resultado de pruebas de regresion', 
-                jiraProjectVersion: '1.0', 
+                  //  customTestCycle: [
+				//name: 'Pruebas de regresion',
+                //description: 'Resultado de pruebas de regresion', 
+                //jiraProjectVersion: '1.0', 
                 
             ]     
         }
