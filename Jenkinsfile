@@ -72,7 +72,7 @@ pipeline {
                 //description: 'Resultado de pruebas de regresion', 
                 //jiraProjectVersion: '1.0', 
                 
-            ]     
+           // ]     
         }
     }
 
