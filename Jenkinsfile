@@ -8,8 +8,8 @@ pipeline {
 
 	agent any
     tools {
-            maven 'MAVEN'
-            jdk 'Java 8-251'
+            maven 'M3'
+            jdk 'jdk8.221'
         }
     
     stages {
@@ -57,11 +57,27 @@ pipeline {
                 }
             }
         }
-        
-
  
+    }
+	
+	post {
+        always {
+            publishTestResults serverAddress: 'https://itera2020.atlassian.net',
+                    projectKey: 'PS',
+                    filePath:'target/cucumber/*.json',
+                    format: 'Cucumber',
+                    autoCreateTestCases: false,
+                    customTestCycle: [
+				name: 'Pruebas de regresion',
+                description: 'Resultado de pruebas de regresion', 
+                jiraProjectVersion: '1.0', 
+                
+            ]     
+        }
+    }
 
     }
+	
 
  
 
